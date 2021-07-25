@@ -20,7 +20,7 @@ function Header() {
 
             {/* Focus-within means when child gets focus on then apply these styles */}
             <div className="flex flex-grow items-center px-5
-             py-2 bg-gray-100 text-gray-600 rounded-lg mx-5 md:mx-20 focus-within:shadow-md">
+             py-2 bg-gray-100 text-gray-600 rounded-lg group mx-5 md:mx-20 focus-within:shadow-md">
                 <Icon name="search" size="3xl" color="gray" />
                 {/* Flex-grow lets you see the text till the end */}
                 <input type="text" placeholder="search" className="flex-grow px-5 text-base bg-transparent outline-none" />
@@ -39,7 +39,7 @@ function Header() {
 
             <img 
             loading="lazy"
-            className="cursor-pointer h-12 rounded-full ml-2"
+            className="cursor-pointer h-12 w-12 rounded-full ml-2"
             src="https://avatarfiles.alphacoders.com/128/thumb-128984.png"
              />
         </header>
