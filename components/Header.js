@@ -4,7 +4,7 @@ import Icon from "@material-tailwind/react/Icon";
 function Header() {
     return (
         // By default bg-transparent
-        <div className="sticky top-0 z-50 flex items-center px-4 py-2 shadow-md bg-white">
+        <header className="sticky top-0 z-50 flex items-center px-4 py-2 shadow-md bg-white">
             <Button
                 color="gray"
                 buttonType="outline"
@@ -15,8 +15,8 @@ function Header() {
             >
                 <Icon name="menu" size="3xl" color="gray" />
             </Button>
-            <Icon name="description" size="5xl" color="brown" />
-            <h1 className="ml-2 text-gray-700 text-2xl">Docks</h1>
+            <Icon name="description" size="5xl" color="orange" />
+            <h1 className="ml-2 text-gray font-extralight text-2xl italic">Documaker</h1>
 
             {/* Focus-within means when child gets focus on then apply these styles */}
             <div className="flex flex-grow items-center px-5
@@ -42,7 +42,7 @@ function Header() {
             className="cursor-pointer h-12 rounded-full ml-2"
             src="https://avatarfiles.alphacoders.com/128/thumb-128984.png"
              />
-        </div>
+        </header>
     )
 }
 
