@@ -1,10 +1,16 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import Header from '../components/Header';
 import Button from "@material-tailwind/react/Button";
 import Icon from "@material-tailwind/react/Icon";
+import { getSession, useSession } from "next-auth/client";
+import Login from "../components/Login";
 
 export default function Home() {
+  // This hook will grab the client info
+  const [session, loading] = useSession();
+
+  if(!session) return <Login />
+
   return (
     <div>
       <Head>
