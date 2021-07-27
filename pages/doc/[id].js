@@ -52,6 +52,7 @@ function Doc() {
                 color="orange"
                 buttonType="filled"
                 size="regular"
+                // put ! before class to make it important
                 className="hidden md:!inline-flex h-10"
                 rounded={false}
                 block={false}
@@ -64,8 +65,21 @@ function Doc() {
 
                 <img src={session.user.image} className="rounded-full cursor-pointer h-10 w-10 ml-2" alt="" />
             </header>
+
+            <TextEditor />
         </div>
     )
 }
 
 export default Doc
+
+// Fetch user info on the server level
+export async function getServerSideProps(context) {
+    const session = await getSession(context)
+
+    return {
+        props: {
+            session
+        }
+    }
+}
