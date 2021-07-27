@@ -1,6 +1,7 @@
 import 'tailwindcss/tailwind.css'
 import "@material-tailwind/react/tailwind.css";
 import Head from 'next/head';
+import { Provider } from "next-auth/client"
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -12,7 +13,10 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
+      {/* Higher order component that gives access to session through provider */}
+      <Provider session={pageProps.session}>
       <Component {...pageProps} />
+      </Provider>
     </>
   )
 }
