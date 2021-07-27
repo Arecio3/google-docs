@@ -8,6 +8,8 @@ import Modal from "@material-tailwind/react/Modal";
 import ModalBody from "@material-tailwind/react/ModalBody";
 import ModalFooter from "@material-tailwind/react/ModalFooter";
 import { useState } from 'react';
+import { db } from "../backend/firebase";
+import firebase from "firebase";
 
 export default function Home() {
   // This hook will grab the client info
@@ -18,7 +20,22 @@ export default function Home() {
   if (!session) return <Login />;
 
   const createDocument = () => {
+    if (!input) return;
+    // makes userDocs collection
+    db.collection('userDocs')
+    // Grabs the email from session 
+    .doc(session.user.email)
+    // Goes into that users db
+    .collection('docs')
+    // Add doc
+    .add({
+      fileName: input,
+      // gets timestamp from server with firebase static function 
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
 
+    setInput('');
+    setShowModal(false);
   }
 
   const modal = (
