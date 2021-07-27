@@ -1,8 +1,6 @@
 import { signIn } from "next-auth/client";
 import Image from "next/image";
-import Button from "@material-tailwind/react/Button";
 import login from '../images/login.jpeg';
-import googleLogin from "../images/googleLogin.png"
 
 function Login() {
     return (
@@ -18,7 +16,7 @@ function Login() {
             </div>
             <div className="fixed top-[30%] right-[30%] md:top-[30%] right-[45%] bg-gray-400 rounded-full cursor-pointer hover:bg-gray-500">
                 <img
-                    src='https://img.icons8.com/plasticine/2x/google-logo.png'/>
+                    src='https://img.icons8.com/plasticine/2x/google-logo.png' onClick={signIn}/>
             </div>
         </>
 
